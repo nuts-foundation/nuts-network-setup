@@ -4,16 +4,20 @@ WORKDIR="/opt/nuts/temp/"
 OUTDIR="/opt/nuts/keys/"
 CONFDIR="/opt/nuts/conf/"
 
+function usage() {
+  echo "Usage: ./generate_keys.sh NETWORK_NAME CERT_COUNTRY CERT_LOCALITY"
+}
+
 if [ -z "$1" ]; then
-  echo "no network name given"
+  usage
   exit 1
 fi
 if [ -z "$2" ]; then
-  echo "no value for C given"
+  usage
   exit 1
 fi
 if [ -z "$3" ]; then
-  echo "no value for L given"
+  usage
   exit 1
 fi
 NETWORK_NAME=$1
