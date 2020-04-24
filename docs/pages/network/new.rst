@@ -30,9 +30,9 @@ Once an image is on the desired machine and you've gone offline. Run the followi
         -v LOCAL_PATH:/opt/nuts/keys
         nutsfoundation/generate-root-key:latest NETWORK_NAME COUNTRY LOCALITY
 
-Where ``LOCAL_PATH`` is the path where you want your keys to be stored, ``NETWORK_NAME`` is the desired name of your network, COUNTRY is the two-letter country code and LOCALITY is the city of registration. During the process, you'll be asked for a password. This password will be the password for the ``truststore.jks`` and will have to be provided to the network participants next to the ``truststore.jks`` file. Reply with ``yes`` when asked if you want to trust the specific certificate.
+Where ``LOCAL_PATH`` is the path where you want your keys to be stored, ``NETWORK_NAME`` is the desired name of your network, ``COUNTRY`` is the two-letter country code and ``LOCALITY`` is the city of registration. During the process, you'll be asked for a password. This password will be the password for the ``truststore.jks`` and will have to be provided to the network participants next to the ``truststore.jks`` file. Reply with ``yes`` when asked if you want to trust the specific certificate.
 
 Storing the output
 ******************
 
-The container will generate a bunch of files. The ``root.key`` has to be kept securely offline. The ``truststore.jks`` file should be published on a website somewhere along with the password for it. The remainder of the files will have to be loaded into the ``nuts-discovery`` app (https://github.com/nuts-foundation/nuts-discovery.
+The container will generate a bunch of files. The ``root.key`` has to be kept securely offline. The ``truststore.jks`` file should be published on a website somewhere along with the password for it. The remainder of the files will have to be loaded into the ``nuts-discovery`` app https://github.com/nuts-foundation/nuts-discovery

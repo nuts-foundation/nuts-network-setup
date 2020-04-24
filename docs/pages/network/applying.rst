@@ -25,7 +25,7 @@ A basic node.conf looks like this:
     keyStorePassword="cordacadevpass"
 
 
-It's important to change ``myLegalName``. Enter the correct password for the trustStore under ``trustStorePassword``, this should have been published next to the ``truststore.jks`` file. ``keyStorePassword`` can freely be chosen. The ``networkServices`` will not resolve but this is not an issue for now. All extra settings are not important for now.
+It's important to change ``myLegalName``. Enter the correct password for the trustStore under ``trustStorePassword``, this should have been published next to the ``truststore.jks`` file. ``keyStorePassword`` should not be changed. The ``networkServices`` will not resolve but this is not an issue for now. All extra settings are not important for now.
 
 The ``truststore.jks`` file has to be downloaded and placed in the certificates directory.
 
@@ -34,7 +34,8 @@ When you're happy with your config run:
 .. code-block:: shell
 
     docker run -it \
-        -v {{NODE_BASE_DIR}}:/opt/nuts/node \
+        -v {{NODE_BASE_DIR}}/node.conf:/opt/nuts/node.conf \
+        -v {{NODE_BASE_DIR}}/certificates:/opt/nuts/certificates \
         nutsfoundation/generate-csr:latest
 
 where ``NODE_BASE_DIR`` points to the directory where the former files live.
@@ -43,4 +44,6 @@ Submit CSR
 **********
 
 When the docker container finishes running a ``csr.pem`` file will have been placed in the ``NODE_BASE_DIR`` directory. Send this file to the Nuts foundation.
+
+When you receive a zip package, you can continue with `Loading keys`_.
 

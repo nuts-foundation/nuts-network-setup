@@ -1,0 +1,12 @@
+FROM adoptopenjdk/openjdk11:alpine
+
+RUN apk update \
+  && apk add --no-cache curl bash openssl \
+  && update-ca-certificates
+
+RUN mkdir -p /opt/nuts/
+COPY scripts/load-certificate/* /opt/nuts/
+RUN chmod +x /opt/nuts/*
+
+WORKDIR /opt/nuts/
+ENTRYPOINT ["/opt/nuts/load_certificate.sh"]
