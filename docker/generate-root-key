@@ -1,0 +1,10 @@
+FROM adoptopenjdk/openjdk11:alpine
+
+RUN apk update \
+  && apk add --no-cache curl bash openssl \
+  && update-ca-certificates
+
+COPY conf/generate-root-key/* /opt/nuts/conf/
+COPY scripts/generate-root-key/* /opt/nuts/
+
+ENTRYPOINT ["/opt/nuts/generate_keys.sh"]

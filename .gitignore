@@ -1,0 +1,8 @@
+#build dirs
+_build
+
+#editors
+.idea
+
+#large files
+corda.jar
