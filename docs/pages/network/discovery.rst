@@ -3,6 +3,8 @@
 Running the network discovery service
 #####################################
 
+**Network administrator action**
+
 In order to be able to support the network by signing new requests and generating the *networkParameters*, the **discovery** service is needed. https://github.com/nuts-foundation/nuts-discovery
 
 The easiest way to run the service is to use a docker image and mount the keys and configuration files. The docker image is hosted on https://hub.docker.com/repository/docker/nutsfoundation/nuts-discovery

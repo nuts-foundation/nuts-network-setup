@@ -3,6 +3,8 @@
 Loading keys
 ############
 
+**Vendor action**
+
 You can unzip the file given by the network operator. This should result in the following structure:
 
 - DIST_DIR

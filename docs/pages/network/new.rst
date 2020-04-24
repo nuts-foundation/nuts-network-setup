@@ -3,6 +3,8 @@
 Create a new network
 ####################
 
+**Network administrator action**
+
 Creating a new network begins with generating the root keys. These are needed to enable the Corda part of the network.
 
 Requirements

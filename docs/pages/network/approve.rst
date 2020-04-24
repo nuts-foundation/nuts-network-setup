@@ -3,6 +3,8 @@
 Approve vendor
 ##############
 
+**Network administrator action**
+
 As a network administrator, it's your job to approve requests from a vendor. Requests will be sent in the form of PEM-encoded *certificate signing requests*.
 
 Check source
@@ -18,7 +20,7 @@ If all is correct, the applicant used the provided Docker images to generate the
 Approve the request
 *******************
 
-First make sure the discovery service is running with the correct keys! Check `Running the network discovery service`_.
+First make sure the discovery service is running with the correct keys! Check :ref:`Running the network discovery service`.
 
 The request can be approved by running the following:
 

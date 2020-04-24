@@ -3,6 +3,8 @@
 Join a network
 ##############
 
+**Vendor action**
+
 To join a network, a CSR will have to be sent. A Corda node can generate this for you. To do this, you'll need the following directory structure:
 
 - NODE_BASE_DIR
@@ -45,5 +47,5 @@ Submit CSR
 
 When the docker container finishes running a ``csr.pem`` file will have been placed in the ``NODE_BASE_DIR`` directory. Send this file to the Nuts foundation.
 
-When you receive a zip package, you can continue with `Loading keys`_.
+When you receive a zip package, you can continue with :ref:`loading-keys`.
 
