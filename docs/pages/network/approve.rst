@@ -20,11 +20,11 @@ If all is correct, the applicant used the provided Docker images to generate the
 Approve the request
 *******************
 
-First make sure the discovery service is running with the correct keys! Check :ref:`Running the network discovery service`.
+First make sure the discovery service is running with the correct keys! Check :ref:`run-discovery`.
 
 The request can be approved by running the following:
 
-.. code-block:: shell
+
 
     scripts/approve.sh PATH_TO_PEM [DISCOVERY_BASE_URL]
 
