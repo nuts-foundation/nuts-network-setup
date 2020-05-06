@@ -141,19 +141,14 @@ And read:
 Closing
 ^^^^^^^
 
-First seal:
-
-.. code-block:: shell
-
-    vault operator seal
-
-
-Then destroy the root token:
+First destroy the root token:
 
 .. code-block:: shell
 
     export VAULT_TOKEN=s.4GhOLbGX0D3PsVxVV0p40Lea
     vault token revoke s.4GhOLbGX0D3PsVxVV0p40Lea
+
+Then close the docker container
 
 
 Distribution
