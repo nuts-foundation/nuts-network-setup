@@ -77,11 +77,11 @@ cp "${BASH_SOURCE%/*}/../files/sslkeystore.conf" dist/conf/sslkeystore.conf
 if hash gsed 2>&1 1>/dev/null; then
   DN=$(gsed 's/,/\n/g' cordaclientca_name.txt)
   echo "$DN" >> "dist/conf/sslkeystore.conf"
-  gsed -i 's/(CN=.*)/\1_tls/g' sslkeystore.conf
+  gsed -i -E 's/(CN=.*)/\1_tls/g' "dist/conf/sslkeystore.conf"
 else
   DN=$(sed 's/,/\n/g' cordaclientca_name.txt)
   echo "$DN" >> "dist/conf/sslkeystore.conf"
-  sed -i 's/(CN=.*)/\1_tls/g' sslkeystore.conf
+  sed -i 's/(CN=.*)/\1_tls/g' "dist/conf/sslkeystore.conf"
 fi
 
 zip -r dist dist

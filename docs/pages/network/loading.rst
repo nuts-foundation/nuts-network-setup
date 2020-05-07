@@ -32,3 +32,5 @@ Then run the following command:
 
 Where ``NODE_BASE_DIR`` points to the directory where the node.conf file exists (and the certificates directory).
 The ``DIST_DIR`` points to the root of the files extracted from the zip (see above).
+
+It is expected that all passwords are ``cordacadevpass``

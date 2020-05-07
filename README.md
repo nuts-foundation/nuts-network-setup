@@ -45,6 +45,13 @@ docker run -it \
   nutsfoundation/generate-csr:latest
 ```
 
+## load-certificate
+
+```shell script
+docker build -f docker/load-certificate -t nutsfoundation/load-certificate .
+```
+
+
 # scripts
 
 The `scripts` directory contains shell scripts used in the different docker images. The sub-directories mirror the image names.
