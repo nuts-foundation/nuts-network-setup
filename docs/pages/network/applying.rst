@@ -42,6 +42,10 @@ When you're happy with your config run:
 
 where ``NODE_BASE_DIR`` points to the directory where the former files live.
 
+.. note::
+
+    After the creation of the CSR and before you run the node. The ``networkService`` part of the config has to be removed (while running without the discovery service). Also ``devMode`` should be set to true.
+
 Submit CSR
 **********
 
