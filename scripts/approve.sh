@@ -46,6 +46,7 @@ fi
 
 # approve
 name=$(cat ${NAME_PATH})
+
 echo "approving CSR via ${DISCOVERY_URL}/admin/certificates/signrequests/${name}/approve"
 if ! curl -X PUT "${DISCOVERY_URL}/admin/certificates/signrequests/${name}/approve" > error
 then
@@ -75,13 +76,13 @@ rm dist/certs.zip
 cp "${BASH_SOURCE%/*}/../files/sslkeystore.conf" dist/conf/sslkeystore.conf
 
 if hash gsed 2>&1 1>/dev/null; then
-  DN=$(gsed 's/,/\n/g' cordaclientca_name.txt)
+  DNR=$(tr ',' $'\n' <<< "${name}" | gtac | gpaste -s -d ',')
+  DN=$(gsed 's/,/\n/g' <<< "${DNR}")
   echo "$DN" >> "dist/conf/sslkeystore.conf"
-  gsed -i -E 's/(CN=.*)/\1_tls/g' "dist/conf/sslkeystore.conf"
 else
-  DN=$(sed 's/,/\n/g' cordaclientca_name.txt)
+  DNR=$(tr ',' $'\n' <<< "${name}" | tac | paste -s -d ',')
+  DN=$(sed 's/,/\n/g' <<< "${DNR}")
   echo "$DN" >> "dist/conf/sslkeystore.conf"
-  sed -i 's/(CN=.*)/\1_tls/g' "dist/conf/sslkeystore.conf"
 fi
 
 zip -r dist dist
