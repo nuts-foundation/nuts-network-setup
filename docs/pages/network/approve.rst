@@ -1,7 +1,7 @@
 .. _add-a-vendor:
 
-Approve vendor
-##############
+Approving a vendor
+##################
 
 **Network administrator action**
 

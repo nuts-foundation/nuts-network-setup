@@ -1,7 +1,7 @@
 .. _generate-root-keys:
 
-Create a new network
-####################
+Creating a new network
+######################
 
 **Network administrator action**
 
